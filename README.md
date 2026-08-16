@@ -40,11 +40,15 @@ Lag-1 correlation was found to be mildly negative, suggesting weak short-term me
 
 ![Momentum vs Mean Reversion](figures/momentum_vs_mean_reversion_SPY.png)
 
-### 4. Rolling Temporal Correlation
+### 2. Volatility Clustering
 
-Rolling lag-1 correlation shows that market memory is regime-dependent rather than constant.
+Absolute returns show visible bursts of activity, suggesting market volatility is persistent over time rather than evenly spread out.
 
-![Rolling Correlation](figures/rolling_correlation_SPY.png)
+![Volatility Clustering](figures/volatility_clustering_SPY.png)
+
+To formally test this rather than relying on visual inspection, I computed the autocorrelation of absolute returns. Every lag from 1 to 30 days sits well outside the 95% confidence band (roughly 0.25-0.39 versus a band of about ±0.06), confirming genuine, statistically significant clustering -- in sharp contrast to raw returns, which show no such structure at any lag.
+
+![Autocorrelation of Absolute Returns](figures/acf_abs_returns_SPY.png)
 
 ## Key Insight
 
